@@ -1,12 +1,19 @@
-*{
-	margin: 0%;
-	padding: 0%;
-	box-sizing: border-box;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
 }
 
 img{
   height: 100%;
 }
+
+/* Nav BAr */
+
 .navbar {
   display: flex;
   justify-content: space-evenly;
@@ -36,90 +43,6 @@ img{
   color: #d1fae5; 
 }
 
-
-@media (max-width: 768px) {
-  .nav-links {
-    gap: 20px;
-  }
-}
-
-@media (max-width: 640px) {
-  .navbar {
-    flex-direction: column;
-    padding: 10px;
-  }
-
-  .nav-links {
-    gap: 10px;
-  }
-
-  .nav-links a {
-    font-size: 1rem; 
-  }
-}
-
-
-/* Footer */
-
-.footer {
-  background-color: #65a30d;
-  color: white;
-  padding: 20px;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.footer-logo {
-  text-align: center;
-  width: 150px;
-}
-
-.footer-logo img {
-  display: block;
-  margin: 0 auto 10px;
-  height: 100%;
-}
-
-.quick-links h2 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-
-.links a {
-  color: white;
-  font-size: 17px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.links a:hover {
-  color: #d1fae5; 
-}
-
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 20px;
-  background-color: #365314; 
-}
-
-
-
-
-
 /* ABOUT */
 .about-section {
   height: 100vh;
@@ -141,31 +64,30 @@ img{
   margin-top: 10px;
 }
 
-
-.product-cards {
+.about-cards {
+  width: 100%;
   display: flex;
   justify-content: center;
   gap: 40px;
   margin-top: 20px;
 }
 
-
-
-.product-card {
-  background-color: #94a3b8; 
-  padding: 20px;
+.about-card {
+  background-color: #d1d5db; 
+  padding: 20px 10px 20px 10px ;
   border-radius: 10px;
   width: 220px;
   text-align: center;
 }
 
-.product-card img {
+.about-card img {
   max-width: 100%;
-  height: auto;
-  height: 100%;
+  height: 200px;
+  border-radius: 6px;
+
 }
 
-.product-card button {
+.about-card button {
   padding: 10px 20px;
   background-color: #65a30d; 
   color: white;
@@ -175,10 +97,72 @@ img{
   margin-top: 15px;
 }
 
-.product-card button:hover {
+.about-card button:hover {
   background-color: #4a7c0b; 
 }
 
+
+/* Car */
+.car-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+  height: 100%;
+}
+
+.car-card {
+  background-color: #d1d5db; 
+  padding: 20px 10px 20px 10px ;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.car-card h2 {
+  font-size: 21px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.car-card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  height: 100%;
+
+}
+
+.price-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.price-section p {
+  font-size: 16px;
+}
+
+.car-card button {
+  width: 100%;
+  padding: 10px;
+  background-color: #65a30d; 
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.car-card button:hover {
+  background-color: #4a7c0b; 
+}
 
 /* BIKES */
 
@@ -187,13 +171,13 @@ img{
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 20px;
-  height: 100vh;
   justify-items: center;
 }
 
 .product-card {
-  background-color: #d1d5db; 
-  padding: 20px;
+  background-color: #d1d5db;
+  width: 100%; 
+  padding: 20px 20px 20px 10px;
   border-radius: 10px;
   text-align: center;
 }
@@ -243,70 +227,66 @@ img{
   background-color: #4a7c0b; 
 }
 
-
-/* Car */
-.car-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+/* Footer */
+.footer {
+  background-color: #65a30d;
+  color: white;
   padding: 20px;
-  height: 100vh;
-  justify-items: center;
 }
 
-.car-card {
-  background-color: #d1d5db; 
-  padding: 20px;
-  border-radius: 10px;
+.footer-content {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
   text-align: center;
+  width: 150px;
 }
 
-.car-card h2 {
-  font-size: 28px;
-  font-weight: 800;
+.footer-logo img {
+  display: block;
+  margin: 0 auto 10px;
+  height: 100%;
+}
+
+.quick-links h2 {
+  font-size: 20px;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
-.car-card img {
-  width: 100%;
-  max-height: 200px;
-  object-fit: cover;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  height: 100%;
-
-}
-
-.price-section {
+.links {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  font-size: 20px;
-  font-weight: 600;
-  margin: 10px 0;
+  gap: 5px;
 }
 
-.price-section p {
-  font-size: 16px;
-}
-
-.car-card button {
-  width: 100%;
-  padding: 10px;
-  background-color: #65a30d; 
+.links a {
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+  font-size: 17px;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.car-card button:hover {
-  background-color: #4a7c0b; 
+.links a:hover {
+  color: #d1fae5; 
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  background-color: #365314; 
+  color: white;
 }
 
 @media (max-width: 768px) {
+   .nav-links {
+    gap: 20px;
+  }
   .car-card h2 {
     font-size: 20px;
   }
@@ -315,11 +295,12 @@ img{
     height: 185vh;
   }
    .about-section {
-    height: 145vh;
+    height: 65vh;
   }
     .about-text {
     padding: 10px 7%;
   }
+  
   .about-text h2 {
     font-size: 30px;
   }
@@ -330,9 +311,42 @@ img{
     grid-template-columns: repeat(2, 1fr);
     height: 185vh;
   }
+  .product-grid{
+    grid-template-columns: repeat(2,1fr);
+    height: 122vh;
+  }
+}
+
+
+@media (max-width: 1024px) {
+.product-grid{
+  grid-template-columns: repeat(2,1fr);
+
+}
 }
 
 @media (max-width: 640px) {
+
+   .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 1rem; 
+  }
+
+   .about-section {
+    height: 140vh;
+  }
+  .about-cards{
+  flex-direction: column;
+  align-items: center ;
+  }
   .car-card h2 {
     font-size: 16px;
   }
@@ -347,13 +361,14 @@ img{
   }
   .product-grid {
     grid-template-columns: 1fr;
-    height: 350vh;
+    height: 230vh;
+    padding: 10px;
   }
   .product-card h2 {
     font-size: 18px;
   }
   .car-grid {
     grid-template-columns: 1fr;
-    height: 320vh;
+    height: 220vh;
   }
 }
