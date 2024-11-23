@@ -15,8 +15,8 @@ const Footer = () => {
             <h2>Quick Links</h2>
             <div className="links">
               <a href="/">Home</a>
-              <a href="./bike.html">SuperBikes</a>
-              <a href="./car.html">SuperCar</a>
+              <a href="/SuperBikes">SuperBikes</a>
+              <a href="/Super-Car">SuperCar</a>
             </div>
           </div>
         </div>
