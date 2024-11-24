@@ -14,11 +14,11 @@ const Home = () => {
         <div className="about-text">
           <h2>About Us</h2>
           <p>
-            Welcome, your one-stop destination for premium cars and bikes. We
+            Welcomes, your one-stop destination for premium cars and bikes. We
             offer a wide selection of top-quality vehicles, ensuring you find
             the perfect ride that suits your style and needs. Our expert team is
             dedicated to providing exceptional customer service and guidance to
-            help you make the best choice. Whether you are looking for speed,
+            help you make the best choice. Whether you are looking for speed
             comfort, or reliability, we have something for everyone.
           </p>
         </div>
